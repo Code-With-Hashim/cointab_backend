@@ -9,9 +9,11 @@ const fetchUser = async (req, res) => {
 
     try {
         
-        const userData = await (await fetch(`https://randomuser.me/api/?results=${bulk}`)).json()
+        const userData = await fetch(`https://randomuser.me/api/?results=${bulk}`)
 
-        await userModal.insertMany(userData.results)
+        const data = await userData.json()
+
+        await userModal.insertMany(data.results)
 
         res.send({
             result : 'User Data has been added successfully'
