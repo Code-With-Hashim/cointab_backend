@@ -1,5 +1,6 @@
-const { userModal } = require('../modal/Users.modal')
+const fetch = require('node-fetch').default;
 
+const { userModal } = require('../modal/Users.modal')
 
 
 
